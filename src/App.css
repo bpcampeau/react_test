@@ -1,28 +1,143 @@
-.App {
-  text-align: center;
+:root {
+    --solid-dark: #333333;
+    --font-color: #fafaf8;
+    --inner-border: #6d6d6d;
+    --blue: 0, 164, 224;
+    --select-color: 186, 186, 186;
+    --white-rgb: 255, 255, 255;
+    --white: #ffffff;
+    --grey: #8e8e8e;
+    --green: #98ff93;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.addressBook {
+    margin-top: 50px;
+    border: 1px solid var(--solid-dark);
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+
+    .header {
+        padding: 20px 0;
+        font-size: 30px;
+        font-weight: bold;
+        background-color: var(--solid-dark);
+        border-bottom: 1px solid var(--inner-border);
+        color: var(--font-color);
+    }
+
+    .body {
+    }
+
+    .footer {
+        padding: 10px;
+        border-top: 1px solid var(--inner-border);
+        color: #6f6f6f;
+        background-color: var(--solid-dark);
+    }
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* Search Box Component */
+
+.search-box {
+    input[type=search] {
+        width: 100%;
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: 18px;
+        border: 0;
+        border-bottom: 1px solid var(--inner-border);
+        background-color: rgba(var(--white-rgb),0.10);
+        color: var(--white);
+
+        &::placeholder {
+            color: var(--white);
+        }
+    }
 }
 
-.App-title {
-  font-size: 1.5em;
+/* Contact List Component */
+
+.contact-column {
+    border-right: 1px solid var(--inner-border);
+
 }
 
-.App-intro {
-  font-size: large;
+.contact-list {
+    list-style-type: none;
+    margin-bottom: 0;
+    overflow: auto;
+    height: 479px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.add-new {
+    border-top: 1px solid var(--inner-border);
+    padding: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--green);
+
+    .fa {
+        margin-right: 10px;
+    }
 }
+
+.contact {
+    border-bottom: 1px solid var(--inner-border);
+    padding: 20px 10px;
+    background-color: rgba(var(--select-color), 0);
+    transition: background-color 0.25s ease;
+
+    &:last-child {
+        border: 0;
+    }
+
+    figure {
+        float: left;
+        overflow: hidden;
+
+        img {
+            border: 2px solid rgba(var(--blue), 0);
+            border-radius: 50%;
+            transition: border-color 0.25s ease;
+        }
+    }
+
+    .contact-name {
+        float: left;
+        padding-left: 30px;
+        padding-top: 30px;
+        color: var(--font-color);
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    &:hover, &.active {
+        cursor: pointer;
+        background-color: rgba(var(--select-color), 0.20);
+
+        figure img {
+            border-color: rgba(var(--blue), 0.75);
+        }
+    }
+}
+
+
+/* Contact Detail Component */
+.contact-detail {
+    position: relative;
+    height: 574px;
+}
+
+
+.no-contact {
+    position: relative;
+    top: calc(50% - 30px);
+    color: var(--grey);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+

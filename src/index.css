@@ -2,4 +2,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: url('images/earth.jpg') no-repeat #000000;
+  background-size: cover;
+}
+
+/* Special Bootstrap Rules */
+
+.no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+
 }
